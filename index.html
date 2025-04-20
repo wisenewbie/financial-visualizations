@@ -6,6 +6,7 @@
     <title>Avaron Financial Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="https://www.avaron.com/favicon.ico">
+    <script src="assets/js/sparklines.js"></script>
 </head>
 <body>
     <header>
@@ -24,31 +25,61 @@
     </nav>
 
     <main>
-        <!-- Year-1 Totals KPI Row -->
-        <section id="hero" class="kpi-row">
-            <div class="kpi">
-                <h3>Total Hardware Rev</h3>
-                <p>$3,898,200</p>
+        <!-- Year-1 Totals KPI Grid -->
+        <section id="kpi-hero" class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="dot yellow"></span>
+                    <h4>Total Hardware</h4>
+                </div>
+                <div class="kpi-value">$3.9 M</div>
+                <div class="kpi-caption">Year-1 Total</div>
+                <canvas class="sparkline" data-values="[63.6,127.2,190.8,254.4,318,381.6,445.2,508.8,572.4,636,699.6,763.2]"></canvas>
             </div>
-            <div class="kpi">
-                <h3>Total Software Rev</h3>
-                <p>$4,317,200</p>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="dot orange"></span>
+                    <h4>Total Software</h4>
+                </div>
+                <div class="kpi-value">$4.3 M</div>
+                <div class="kpi-caption">Year-1 Total</div>
+                <canvas class="sparkline" data-values="[70.4,140.8,211.2,281.6,352,422.4,492.8,563.2,633.6,704,774.4,844.8]"></canvas>
             </div>
-            <div class="kpi">
-                <h3>Total Support Rev</h3>
-                <p>$330,600</p>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="dot red"></span>
+                    <h4>Total Support</h4>
+                </div>
+                <div class="kpi-value">$330.6 K</div>
+                <div class="kpi-caption">Year-1 Total</div>
+                <canvas class="sparkline" data-values="[5.4,10.8,16.2,21.6,27,32.4,37.8,43.2,48.6,54,59.4,64.8]"></canvas>
             </div>
-            <div class="kpi">
-                <h3>Total AIM Fees</h3>
-                <p>$262,460</p>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="dot pink"></span>
+                    <h4>Total AIM Fees</h4>
+                </div>
+                <div class="kpi-value">$262.5 K</div>
+                <div class="kpi-caption">Year-1 Total</div>
+                <canvas class="sparkline" data-values="[4.3,8.6,12.9,17.2,21.5,25.8,30.1,34.4,38.7,43,47.3,51.6]"></canvas>
             </div>
-            <div class="kpi">
-                <h3>Total Contributor Rev</h3>
-                <p>$50,000</p>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="dot teal"></span>
+                    <h4>Total Contributor</h4>
+                </div>
+                <div class="kpi-value">$50 K</div>
+                <div class="kpi-caption">Year-1 Total</div>
+                <canvas class="sparkline" data-values="[0.8,1.6,2.4,3.2,4,4.8,5.6,6.4,7.2,8,8.8,9.6]"></canvas>
             </div>
-            <div class="kpi">
-                <h3>Total Enterprise Rev</h3>
-                <p>$400,000</p>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <span class="dot cyan"></span>
+                    <h4>Total Enterprise</h4>
+                </div>
+                <div class="kpi-value">$400 K</div>
+                <div class="kpi-caption">Year-1 Total</div>
+                <canvas class="sparkline" data-values="[6.5,13,19.5,26,32.5,39,45.5,52,58.5,65,71.5,78]"></canvas>
             </div>
         </section>
 
