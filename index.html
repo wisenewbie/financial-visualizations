@@ -1,74 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Financial Visualizations</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .visualization {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaron Financial Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://www.avaron.com/favicon.ico">
 </head>
 <body>
-    <h1>Financial Visualizations</h1>
-    <p>Interactive financial visualizations created with Plotly.</p>
+    <header>
+        <img src="https://www.avaron.com/wp-content/uploads/2023/03/avaron-logo.png" alt="Avaron Logo" class="logo">
+        <h1>Financial Dashboard</h1>
+    </header>
 
-    <div class="visualization">
-        <h2><a href="monthly_revenue_streams.html">Monthly Revenue Streams</a></h2>
-        <p>Stacked bar chart showing monthly revenue breakdown by stream.</p>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#streams">Revenue</a></li>
+            <li><a href="#mrr">Recurring</a></li>
+            <li><a href="#units">Deployments</a></li>
+            <li><a href="#delta">Analysis</a></li>
+        </ul>
+    </nav>
 
-    <div class="visualization">
-        <h2><a href="cumulative_units.html">Cumulative Units Installed</a></h2>
-        <p>Line chart tracking the growth of installed units over time.</p>
-    </div>
+    <main>
+        <!-- Hero KPI row -->
+        <section id="hero" class="kpi-row">
+            <div class="kpi">
+                <h3>Total Units Deployed</h3>
+                <p>36</p>
+            </div>
+            <div class="kpi">
+                <h3>Year-1 Revenue</h3>
+                <p>$8.32M</p>
+            </div>
+            <div class="kpi">
+                <h3>ARR (May)</h3>
+                <p>$9.96M</p>
+            </div>
+        </section>
 
-    <div class="visualization">
-        <h2><a href="mrr_arr_ramp.html">MRR & ARR Ramp</a></h2>
-        <p>Dual-line chart showing Monthly and Annual Recurring Revenue growth.</p>
-    </div>
+        <!-- Chart Grid Layout -->
+        <section id="dashboard" class="chart-grid">
+            <!-- Group 1: Core Revenue -->
+            <div class="chart-card" id="streams">
+                <h4>Monthly Revenue Streams</h4>
+                <iframe src="monthly_revenue_streams.html"></iframe>
+            </div>
+            <div class="chart-card" id="mix">
+                <h4>Annual Revenue Mix</h4>
+                <iframe src="annual_mix.html"></iframe>
+            </div>
 
-    <div class="visualization">
-        <h2><a href="unit_shipments.html">Unit Shipments by Tier</a></h2>
-        <p>Grouped bar chart displaying shipments by product tier.</p>
-    </div>
+            <!-- Group 2: Recurring Metrics -->
+            <div class="chart-card" id="mrr">
+                <h4>MRR & ARR Ramp</h4>
+                <iframe src="mrr_arr_ramp.html"></iframe>
+            </div>
+            <div class="chart-card" id="arpu">
+                <h4>ARPU vs Churn</h4>
+                <iframe src="arpu_churn.html"></iframe>
+            </div>
 
-    <div class="visualization">
-        <h2><a href="arpu_churn.html">ARPU vs Monthly Churn</a></h2>
-        <p>Dual-line chart comparing Average Revenue Per User and churn rates.</p>
-    </div>
+            <!-- Group 3: Unit Deployments -->
+            <div class="chart-card" id="units">
+                <h4>Cumulative Deployments by Tier</h4>
+                <iframe src="cumulative_by_tier.html"></iframe>
+            </div>
+            <div class="chart-card" id="ship">
+                <h4>Monthly Shipments</h4>
+                <iframe src="unit_shipments.html"></iframe>
+            </div>
 
-    <div class="visualization">
-        <h2><a href="delta_revenue.html">Month-to-Month Revenue Changes</a></h2>
-        <p>Waterfall chart showing revenue changes between months.</p>
-    </div>
+            <!-- Group 4: Movement & Sensitivity -->
+            <div class="chart-card" id="delta">
+                <h4>Month-to-Month Δ Revenue</h4>
+                <iframe src="delta_revenue.html"></iframe>
+            </div>
+            <div class="chart-card" id="sens">
+                <h4>Sensitivity Analysis</h4>
+                <iframe src="sensitivity_waterfall.html"></iframe>
+            </div>
+        </section>
+    </main>
 
-    <div class="visualization">
-        <h2><a href="sensitivity_waterfall.html">Sensitivity Analysis</a></h2>
-        <p>Waterfall chart analyzing the impact of various factors on total revenue.</p>
-    </div>
-
-    <div class="visualization">
-        <h2><a href="annual_mix.html">Annual Revenue Mix</a></h2>
-        <p>Pie chart showing the distribution of annual revenue by stream.</p>
-    </div>
+    <footer>
+        <p>© 2024 Avaron. All rights reserved.</p>
+    </footer>
 </body>
 </html> 

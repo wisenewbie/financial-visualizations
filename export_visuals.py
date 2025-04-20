@@ -179,4 +179,10 @@ fig9.update_layout(
 )
 for trace in fig9.data:
     trace.update(hovertemplate='%{x}<br>%{variable}: %{y:,.0f} units')
-fig9.write_html('cumulative_by_tier.html', include_plotlyjs='cdn') 
+fig9.write_html('cumulative_by_tier.html', include_plotlyjs='cdn')
+
+# Print KPI values for dashboard
+print("\nKPI Values for Dashboard:")
+print(f"Total Units Deployed: {df['Cumulative Units'].iloc[-1]:,.0f}")
+print(f"Year-1 Revenue: ${df['Total'].sum()/1e6:.2f}M")
+print(f"ARR (May): ${df['ARR'].iloc[-1]/1e6:.2f}M") 
