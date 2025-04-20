@@ -68,21 +68,19 @@ nav a:hover {
 }
 
 .kpi-row {
-    display: flex;
-    justify-content: space-around;
-    padding: 1.5rem;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    gap: 1rem;
+    padding: 2rem;
 }
 
 .kpi {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-    padding: 1rem;
+    background: #fff;
     border-radius: 8px;
-    background: white;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.2s;
 }
 
@@ -91,17 +89,38 @@ nav a:hover {
 }
 
 .kpi h3 {
-    margin-bottom: 0.5rem;
     color: var(--brand-blue);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     font-size: 1rem;
     font-weight: 500;
 }
 
+.kpi h3 img {
+    width: 20px;
+    height: 20px;
+}
+
 .kpi p {
     font-size: 2rem;
-    margin: 0;
     font-weight: bold;
+    margin: 0;
     color: var(--brand-dark);
+}
+
+.kpi.new-units {
+    border: 2px solid var(--brand-dark);
+}
+
+.kpi.new-units.above-target {
+    border-color: var(--brand-accent);
+}
+
+.kpi.new-units.above-target p {
+    color: var(--brand-accent);
 }
 
 .chart-grid {
@@ -148,11 +167,7 @@ footer {
 
 @media (max-width: 768px) {
     .kpi-row {
-        flex-direction: column;
-    }
-    
-    .kpi {
-        min-width: 100%;
+        grid-template-columns: 1fr;
     }
     
     nav ul {
