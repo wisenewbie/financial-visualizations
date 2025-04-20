@@ -65,6 +65,10 @@ df = pd.DataFrame({
     'Ship Pro'         : ship_pro,
     'Ship Ultra'       : ship_ultra,
     'Cumulative Units' : ship_lite+ship_pro+ship_ultra,  # or (ship_lite+ship_pro+ship_ultra).cumsum() if you prefer
+    'Cumulative Lite'  : ship_lite.cumsum(),
+    'Cumulative Pro'   : ship_pro.cumsum(),
+    'Cumulative Ultra' : ship_ultra.cumsum(),
+    'Cumulative Deployed' : (ship_lite+ship_pro+ship_ultra).cumsum(),
     'Active Users'     : active_users,
     'Hardware'         : hardware,
     'Software'         : software,
@@ -158,4 +162,21 @@ fig8 = px.pie(
     mix, names='Stream', values='Value',
     title='Annual Revenue Mix', hole=0.4
 )
-fig8.write_html('annual_mix.html', include_plotlyjs='cdn') 
+fig8.write_html('annual_mix.html', include_plotlyjs='cdn')
+
+# --- CHART 9: Cumulative Deployments by Tier ---
+fig9 = px.line(
+    df,
+    x='Month',
+    y=['Cumulative Lite','Cumulative Pro','Cumulative Ultra','Cumulative Deployed'],
+    title='Cumulative Deployments by Device Class',
+    markers=True,
+    labels={'value':'Units Deployed','variable':'Device Class'}
+)
+fig9.update_layout(
+    yaxis=dict(title='Units Deployed', tickformat=','),
+    hovermode='x unified'
+)
+for trace in fig9.data:
+    trace.update(hovertemplate='%{x}<br>%{variable}: %{y:,.0f} units')
+fig9.write_html('cumulative_by_tier.html', include_plotlyjs='cdn') 
