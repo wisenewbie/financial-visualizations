@@ -23,25 +23,25 @@
         <div id="plot"></div>
         <script type="text/javascript">
             var data = [{
-                "hovertemplate": "Month=%{x}<br>MRR=%{y}<extra></extra>",
+                "hovertemplate": "Month=%{x}<br>MRR=%{y:$,.0f}<extra></extra>",
                 "legendgroup": "",
-                "marker": {"color": "#636efa"},
+                "line": {"color": "#636efa"},
                 "name": "MRR",
                 "showlegend": true,
                 "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                 "xaxis": "x",
-                "y": [100000, 120000, 150000, 180000, 200000, 220000, 250000, 280000, 300000, 320000, 350000, 380000],
+                "y": [100000, 120000, 150000, 180000, 200000, 220000, 250000, 270000, 300000, 330000, 350000, 380000],
                 "yaxis": "y",
                 "type": "scatter"
             }, {
-                "hovertemplate": "Month=%{x}<br>ARR=%{y}<extra></extra>",
+                "hovertemplate": "Month=%{x}<br>ARR=%{y:$,.0f}<extra></extra>",
                 "legendgroup": "",
-                "marker": {"color": "#EF553B"},
+                "line": {"color": "#EF553B"},
                 "name": "ARR",
                 "showlegend": true,
                 "x": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                 "xaxis": "x",
-                "y": [1200000, 1440000, 1800000, 2160000, 2400000, 2640000, 3000000, 3360000, 3600000, 3840000, 4200000, 4560000],
+                "y": [1200000, 1440000, 1800000, 2160000, 2400000, 2640000, 3000000, 3240000, 3600000, 3960000, 4200000, 4560000],
                 "yaxis": "y",
                 "type": "scatter"
             }];
@@ -91,7 +91,17 @@
                             "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]]
                         },
                         "xaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2},
-                        "yaxis": {"gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "automargin": true, "zerolinewidth": 2},
+                        "yaxis": {
+                            "title": {"text": "Revenue (USD)"},
+                            "tickprefix": "$",
+                            "tickformat": ",",
+                            "gridcolor": "white",
+                            "linecolor": "white",
+                            "ticks": "",
+                            "zerolinecolor": "white",
+                            "automargin": true,
+                            "zerolinewidth": 2
+                        },
                         "scene": {
                             "xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2},
                             "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white", "gridwidth": 2},
@@ -105,7 +115,17 @@
                     }
                 },
                 "xaxis": {"anchor": "y", "domain": [0.0, 1.0], "title": {"text": "Month"}},
-                "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "Revenue ($)"}},
+                "yaxis": {
+                    "title": {"text": "Revenue (USD)"},
+                    "tickprefix": "$",
+                    "tickformat": ",",
+                    "gridcolor": "white",
+                    "linecolor": "white",
+                    "ticks": "",
+                    "zerolinecolor": "white",
+                    "automargin": true,
+                    "zerolinewidth": 2
+                },
                 "legend": {"tracegroupgap": 0},
                 "title": {"text": "MRR and ARR Ramp"}
             };
